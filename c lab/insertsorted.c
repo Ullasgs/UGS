@@ -6,18 +6,6 @@ struct node{
     N link;
 } *head;
 int x;
-void reverse(){
-    N prev, cur, next;
-    prev = NULL;
-    cur = next = head;
-    while(next!=NULL){
-        next = next->link;
-        cur->link = prev;
-        prev =cur;
-        cur = next;
-    }
-    head = prev;
-}
 void print(){
     N temp;
     temp = head;
@@ -69,7 +57,7 @@ int main(){
     scanf("%d",&x);
     create();
     print();
-    reverse();
+    insert();
     print();
     return 0;
 }
