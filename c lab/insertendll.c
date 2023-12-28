@@ -1,3 +1,4 @@
+//program to insert nodes at the end
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct node * N;
