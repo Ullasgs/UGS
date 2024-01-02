@@ -1,27 +1,14 @@
-//program to reverse a linked list
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct node * N;
 struct node{
     int data;
     N link;
-} *head;
+}*head,*p= NULL,*n = NULL;
 int x;
-void reverse(){
-    N prev, cur, next;
-    prev = NULL;
-    cur = next = head;
-    while(next!=NULL){
-        next = next->link;
-        cur->link = prev;
-        prev=cur;
-        cur = next;
-    }
-    head = prev;
-}
-void print(){
+void print(N m){
     N temp;
-    temp = head;
+    temp = m;
     printf("the numbers are: \n");
     while(temp!=NULL){
         printf("%d \n", temp->data);
@@ -45,13 +32,40 @@ void create(){
     }
     temp->link = NULL;
 }
-
+void insert(int a, N b){
+    N temp,new;
+    new = (N)malloc(sizeof(struct node));
+    new->data = a;
+    new->link = NULL;
+    temp = b;
+    if(temp == NULL){
+        b = new;
+    } 
+    while(temp->link!=NULL){
+        temp = temp->link;
+    }  
+    temp->link = new;
+    print(b);
+}
+void pn(){
+    N temp;
+    temp = head;
+    while(temp->link!=NULL){
+        if(temp->data>0){
+            insert(temp->data, p);
+        } else {
+            insert(temp->data, n);
+        }
+        temp = temp->link;        
+    }
+    printf("Hi");
+}
 int main(){
-    printf("Enter the size of the list: ");
+    printf("Enter the number of elements: ");
     scanf("%d",&x);
     create();
-    print();
-    reverse();
-    print();
-    return 0;
+    print(head);
+    pn();
+    print(p);
+    print(n);
 }
