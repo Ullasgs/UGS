@@ -28,12 +28,11 @@ void print(){
     }
 }
 void insert(){
-    N new, temp;int n;
+    N new;
     new = (N)malloc(sizeof(struct node));
     printf("Enter the new id : ");
     scanf("%d", &new->id);
-    temp = head;
-    new->link = temp;
+    new->link = head;
     head = new;
 }
 void create(){
