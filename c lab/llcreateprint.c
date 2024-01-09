@@ -4,17 +4,16 @@ typedef struct node * N;
 struct node{
     int id;
     N link;
-} *head;
+};
 int x;
-void create(){
+struct node * create(N h){
     N temp,new;
     int n;
-    head = (N)malloc(sizeof(struct node));
     printf("Enter the id 1: ");
     scanf("%d",&n);
-    head->id=n;
-    head->link=NULL;
-    temp = head;
+    h->id=n;
+    h->link=NULL;
+    temp = h;
     for(int i=1;i<x;i++){
         new = (N)malloc(sizeof(struct node));
         printf("Enter the id %d: ", i+1);
@@ -25,10 +24,11 @@ void create(){
         temp=temp->link;
     }
     temp->link = NULL;
+    return h;
 }
-void print(){
+void print(N l){
     N temp;
-    temp = head;
+    temp = l;
     printf("the ids in order are: \n");
     while(temp!=NULL){
         printf("%d \n", temp->id);
@@ -36,9 +36,11 @@ void print(){
     }
 }
 int main(){
+    struct node *rrr;
+    rrr=(N)malloc(sizeof(struct node));
     printf("Enter the number of ids: ");
     scanf("%d",&x);
-    create();
-    print();
+    create(rrr);
+    print(rrr);
     return 0;  
 }

@@ -7,7 +7,7 @@ struct node{
     N link;
 } *head;
 int x;
-void create(); void print(); void insert();
+void create(); void print(); void delete();
 
 int main(){
     printf("Enter the number of ids: ");
@@ -28,16 +28,17 @@ void print(){
     }
 }
 void delete(){
-    N temp,new;int n;
+    N cur,prev,new;int n;
     printf("Enter the id to be deleted: ");
     scanf("%d", &n);
-    temp = head;
-    while(temp->link->id!=n){
-        temp=temp->link;
+    prev = NULL;
+    cur = head;
+    while(cur->id!=n){
+        prev = cur; 
+        cur = cur->link;
     }
-    new = temp->link;
-    temp->link = new->link;
-    head = temp;
+    new = cur->link;
+    prev->link = new;
 }
 void create(){
     N temp,new;
