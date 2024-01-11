@@ -1,4 +1,4 @@
-//program to insert nodes at the beginning
+//program to insert nodes at the end
 #include <stdio.h>
 #include <stdlib.h>
 typedef struct node * N;
@@ -14,7 +14,7 @@ int main(){
     scanf("%d",&x);
     create();
     print();
-    insert();
+    delete();
     print();
     return 0;
 }
@@ -23,18 +23,21 @@ void print(){
     temp = head;
     printf("the ids in order are: \n");
     while(temp!=NULL){
-        printf("%d ", temp->id);
+        printf("%d \n", temp->id);
         temp = temp->link;        
     }
 }
-void insert(){
-    N new;
-    new = (N)malloc(sizeof(struct node));
-    printf("Enter the new id : ");
-    scanf("%d", &new->id);
+void delete(){
+    N temp,new;int n;
+    printf("Enter the id to be deleted: ");
+    scanf("%d", &n);
     temp = head;
-    new->link = head->link;
-    head = new;
+    while(temp->link->id!=n){
+        temp=temp->link;
+    }
+    new = temp->link;
+    temp->link = new->link;
+    head = temp;
 }
 void create(){
     N temp,new;
