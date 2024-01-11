@@ -33,7 +33,7 @@ void insert(){
     printf("Enter the new id : ");
     scanf("%d", &new->id);
     temp = head;
-    new->link = temp;
+    new->link = head->link;
     head = new;
 }
 void create(){
