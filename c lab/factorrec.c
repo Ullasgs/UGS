@@ -9,5 +9,5 @@ int main(){
     printf("Enter the value of n: ");
     int n;
     scanf("%d", &n);
-    printf("Factorial of %d is %d ", n, factor(n));
+    printf("Factorial of %d is %d. \n", n, factor(n));
 }
