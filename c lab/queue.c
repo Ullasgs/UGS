@@ -48,14 +48,14 @@ void display(){
 int main(){
     int n,x;
     printf("Enter your choice for the queue: : ");
-    printf("1. Insert an element: ");
-    printf("2. Delete the element: ");
-    printf("3. Display: ");
-    printf("4. Peek: ");
-    printf("5. Count(of elements): ");
-    printf("6. Exit: ");
+    printf("\n1. Insert an element: ");
+    printf("\n2. Delete the element: ");
+    printf("\n3. Display: ");
+    printf("\n4. Peek: ");
+    printf("\n5. Count(of elements): ");
+    printf("\n6. Exit: ");
     while(1){
-        printf("Enter your choice: ");
+        printf("\nEnter your choice: ");
         scanf("%d",&n);
         switch(n){
             case 1: 
