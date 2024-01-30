@@ -10,11 +10,9 @@ void enqueue(int x){
         return;
     }
     if(front == -1)
-    front = 0;
-    else{
+    front = 0; 
     rear++;
     a[rear] = x;
-    }
 }
 void dequeue(){
     if(front == -1 || front > rear){
@@ -45,19 +43,20 @@ void display(){
         return;
     }
     for(int i=front;i<=rear;i++)
-    printf("%d",a[i]);
+    printf("%d ",a[i]);
 }
 int main(){
     int n,x;
-    printf("Enter your choice for the queue: \n");
-    printf("1. Insert an element\n");
-    printf("2. Delete the element\n");
-    printf("3. Display\n");
-    printf("4. Peek\n");
-    printf("5. Count(of elements)\n");
-    printf("6. Exit\n");
-    scanf("%d",&n);
-    while(n!=7){
+    printf("Enter your choice for the queue: : ");
+    printf("1. Insert an element: ");
+    printf("2. Delete the element: ");
+    printf("3. Display: ");
+    printf("4. Peek: ");
+    printf("5. Count(of elements): ");
+    printf("6. Exit: ");
+    while(1){
+        printf("Enter your choice: ");
+        scanf("%d",&n);
         switch(n){
             case 1: 
             printf("Enter the element to be inserted: ");
