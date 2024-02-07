@@ -1,6 +1,5 @@
 #include <stdio.h>
-int min(int a[],int n,int i)
-{
+int min(int a[],int n,int i){
  	static int x=0;
  	if(i<n){
         if(a[x]>a[i]){
@@ -8,10 +7,9 @@ int min(int a[],int n,int i)
 		    min(a,n,++i); 
         }
     }
-        return x;
- }
- int max(int a[],int n,int i)
- {
+    return x;
+}
+int max(int a[],int n,int i){
  	static int y=0;;
  	if(i<n){
        	if(a[y]<a[i]){
@@ -22,7 +20,7 @@ int min(int a[],int n,int i)
     return y;
 }
 int main(){
-    int a[1000],i,n,sum;
+    int a[100],i,n;
     printf("Enter size of the array : ");
     scanf("%d", &n);
     printf("Enter elements in array : ");
