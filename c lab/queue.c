@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-struct node{
-    int data;
-    struct node * link;
-}*head,*front,*rear;
+int a[100];
+int front= -1;int rear=-1;int size=5;
 typedef struct node * N;
 void enqueue(int x){
-    if(rear == ()){
+    if(rear == (size-1)){
         printf("The queue is full");
         return;
     }
